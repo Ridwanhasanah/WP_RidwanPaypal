@@ -14,7 +14,7 @@ function register_and_build_fields() {
 
    add_settings_section('main_section', 'Main Settings', 'section_cb', __FILE__);
 
-   add_settings_field('adverting_information', 'Email Paypal : ', 'email_paypalku_setting', __FILE__, 'main_section');
+   add_settings_field('email_paypalku', 'Email Paypal : ', 'email_paypalku_setting', __FILE__, 'main_section');
 }
 
 function options_page_fn() {
@@ -39,7 +39,7 @@ function options_page_fn() {
 // Email Paypal
 function email_paypalku_setting() {
    $options = get_option('plugin_options');
-   echo "<input type='text' name='plugin_options'>{$options['email_paypalku']}</input>";
+   echo "<input type='text' name='plugin_options['email_paypalku'] value='{$options['email_paypalku']}'/>";
 }
 
 
